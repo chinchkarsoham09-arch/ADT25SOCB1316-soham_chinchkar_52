@@ -1,0 +1,44 @@
+from abc import ABC, abstractmethod
+
+class Fruit(ABC):
+    @abstractmethod
+    def show(self):
+        pass
+
+
+class Apple(Fruit):
+    def show(self):
+        print("Fruit: Apple")
+
+
+class Mango(Fruit):
+    def show(self):
+        print("Fruit: Mango")
+
+
+class Orange(Fruit):
+    def show(self):
+        print("Fruit: Orange")
+
+
+class FruitFactory:
+    @staticmethod
+    def get_fruit(name):
+        fruits = {
+            "apple": Apple,
+            "mango": Mango,
+            "orange": Orange
+        }
+        fruit = fruits.get(name.lower())
+        if fruit:
+            return fruit()
+        raise ValueError("Invalid Fruit")
+
+
+f1 = FruitFactory.get_fruit("Apple")
+f2 = FruitFactory.get_fruit("Mango")
+f3 = FruitFactory.get_fruit("Orange")
+
+f1.show()
+f2.show()
+f3.show()

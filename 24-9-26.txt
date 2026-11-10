@@ -1,0 +1,16 @@
+import re
+
+text = "Hello My Name Is Purva. I have 18 apples and 25 oranges. Contact me at 9876543210."
+
+# Get numbers
+numbers = re.findall(r'\d+', text)
+
+# Find mobile number
+mobile = re.findall(r'\d{10}', text)
+
+# Check capital alphabets
+capital = re.findall(r'[A-Z]', text)
+
+print("Numbers:", numbers)
+print("Mobile Numbers:", mobile)
+print("Capital Alphabets:", capital)

@@ -1,0 +1,22 @@
+import numpy as np
+
+# Create NumPy array
+temperatures = np.array([30, 32, 29, 31, 33, 35, 34, 32, 30, 28])
+
+# First 3 days
+print("First 3 days:", temperatures[:3])
+
+# Day 5 to Day 8
+print("Day 5 to Day 8:", temperatures[4:8])
+
+# Calculations
+print("Average:", np.mean(temperatures))
+print("Maximum:", np.max(temperatures))
+print("Minimum:", np.min(temperatures))
+print("Total:", np.sum(temperatures))
+
+# Broadcasting: increase every temperature by 2°C
+temperatures = temperatures + 2
+
+# Modified array
+print("Modified array:", temperatures)

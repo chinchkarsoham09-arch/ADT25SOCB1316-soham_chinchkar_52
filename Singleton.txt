@@ -1,0 +1,20 @@
+class Printer:
+    __instance = None
+
+    def __new__(cls):
+        if cls.__instance is None:
+            cls.__instance = super().__new__(cls)
+            print("Printer Created")
+        return cls.__instance
+
+    def print_document(self, user, document):
+        print(f"{user} is printing: {document}")
+
+
+p1 = Printer()
+p2 = Printer()
+
+p1.print_document("Alice", "Assignment.pdf")
+p2.print_document("Bob", "Resume.docx")
+
+print("Same Object:", p1 is p2)
